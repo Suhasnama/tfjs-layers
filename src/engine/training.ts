@@ -158,9 +158,9 @@ export function standardizeInputData(
         const refDim = shapes[i][j];
         if (refDim != null && refDim >= 0 && dim !== refDim) {
           throw new ValueError(
-              `Error when checking ${exceptionPrefix}: expected ${names[i]} ` +
-              `to have shape [${shapes[i]}], but got array with shape ` +
-              `[${array.shape}].`);
+              `Error when checking ${exceptionPrefix}: Expected an input tensor of shape [${shapes[i]}]`+
+              ` with each sample of shape [${shapes[i][1]}] but received input tensor of shape [${array.shape}]`
+               );
         }
       }
     }
